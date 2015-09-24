@@ -4,16 +4,16 @@ int iniY;
 void setup()
 {
   //your code here
-  size(400,400);
+  size(300,300);
   background(24, 27, 186);
-  flurry = new Snowflake[300];
-  for(int i = 0; i < 300; i++){
+  flurry = new Snowflake[200];
+  for(int i = 0; i < 200; i++){
     flurry[i] = new Snowflake();
   }
 }
 void draw()
 {
-  for(int i = 0; i < 300; i++){
+  for(int i = 0; i < 200; i++){
     flurry[i].erase();
     flurry[i].lookDown();
     flurry[i].move();
@@ -39,8 +39,8 @@ class Snowflake
   Snowflake()
   {
     //class member variable initializations
-    x = (int)(Math.random()*400);
-    y = (int)(Math.random()*400);
+    x = (int)(Math.random()*300);
+    y = (int)(Math.random()*300);
     isMoving = true;
   }
   void show()
@@ -53,7 +53,7 @@ class Snowflake
   void lookDown()
   {
     //your code here
-    if(y >= 0 && y <= 401 && get(x,y+3) == color(24, 27, 186)){
+    if(y >= 0 && y <= 305 && get(x,y+3) == color(24, 27, 186)){
       isMoving = true;
     }
     else {
@@ -71,14 +71,14 @@ class Snowflake
   void move()
   {
     if(isMoving)
-      y += 1;
+      y += 3;
   }
   void wrap()
   {
     //your code here
-    if(y >= 396){
+    if(y >= 296){
       y = 0;
-      x = (int)(Math.random()*400);
+      x = (int)(Math.random()*300);
       isMoving = true;
     }
   }
