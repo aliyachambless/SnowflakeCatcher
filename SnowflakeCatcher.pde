@@ -83,5 +83,15 @@ class Snowflake
     }
   }
 }
-
+void keyPressed() 
+{
+  if(keyCode == 32){
+    for(int i = 0; i < 200; i++){
+      flurry[i] = new Snowflake();
+    }
+  }
+  if(keyCode == 68){
+    background(24, 27, 186);
+  }
+}
 
